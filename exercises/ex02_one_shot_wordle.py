@@ -3,7 +3,6 @@
 __author__ = "730557757"
 
 
-
 secret: str = "python"
 guess: str = input(f"What is your {int(len(secret))}-letter guess? ")
 where: int = 0
