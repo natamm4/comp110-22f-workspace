@@ -7,6 +7,7 @@ secret: str = "python"
 guess: str = input(f"What is your {int(len(secret))}-letter guess? ")
 where: int = 0
 emoji: str = ""
+
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
