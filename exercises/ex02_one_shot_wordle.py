@@ -1,6 +1,6 @@
 """EX02 - One-Shot Worldle - Loops!"""
 
-__author__= "730557757"
+__author__ = "730557757"
 
 
 secret: str = "python"
@@ -19,7 +19,9 @@ while where < len(secret):
     if guess[where] == secret[where]:
         emoji += GREEN_BOX
     else:
-        while (exists != True) and (matches < len(secret)):
+        exists: bool = False
+        matches: int = 0
+        while (exists is not True) and (matches < len(secret)):
             if guess[where] == secret[matches]:
                 exists = True
             else:
