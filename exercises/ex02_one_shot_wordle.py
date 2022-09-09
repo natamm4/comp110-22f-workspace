@@ -11,7 +11,6 @@ WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
-
 while len(guess) != int(len(secret)):
     guess = input("That was not int(len(secret)) letters! Try again: ")
 """Makes user reenter word if not the right amount of letters."""
