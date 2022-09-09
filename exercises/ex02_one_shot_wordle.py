@@ -12,7 +12,8 @@ GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
 while len(guess) != int(len(secret)):
-    guess = input("That was not 6 letters! Try again: ")
+    guess = input("That was not int(len(secret)) letters! Try again: ")
+"""Makes user reenter word if not the right amount of letters."""
 while where < len(secret):
     if guess[where] == secret[where]:
         emoji += GREEN_BOX
@@ -31,9 +32,10 @@ while where < len(secret):
             emoji += WHITE_BOX
     where += 1
 print(emoji)
-
+"""Makes emoji output representing correctness of letters."""
 if len(guess) == int(len(secret)):
     if guess == secret:
         print("Woo! You got it!")
     else:
         print("Not quite. Play again soon!")
+"""Tells user whether they were right or not."""
