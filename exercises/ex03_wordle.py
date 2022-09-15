@@ -34,25 +34,27 @@ def emojified(guess: str, secret: str) -> str:
             else: 
                 emoji += WHITE_BOX
         index += 1
-    print(emoji)
+    return emoji
+
 
 def input_guess(expected_len: int) -> str:
     guess: str = input(f"Enter a {int(expected_len)} character word: ")
     while len(guess) != expected_len:
         guess = input(f"That wasn't {int(expected_len)} chars! Try again: ")
     """Makes user reenter word if not the right amount of letters."""
+    return guess
 
 def main() -> None:
     """The entrypoint of the program of main game loop."""
-    codes: str = "ideas"
-    new_guess: str = ""
+    codes: str = "codes"
+    guess: str = ""
     turns: int = 1
     win: bool = False
     while (win is False) and (turns < 6):
         print(f"=== Turn {turns}/6 ===")
-        new_guess = input_guess(len(codes))
-        emojified(new_guess, codes)
-        if new_guess == codes:
+        guess = input_guess(len(codes))
+        emojified(guess, codes)
+        if guess == codes:
             win = True
         else:
             turns += 1
@@ -63,4 +65,4 @@ def main() -> None:
     
 print(main())
 if __name__ == "__main__":
-    main() 
+    main()
