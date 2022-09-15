@@ -35,7 +35,6 @@ def emojified(guess: str, secret: str) -> str:
                 emoji += WHITE_BOX
         index += 1
     print(emoji)
-    return []
 
 def input_guess(expected_len: int) -> str:
     guess: str = input(f"Enter a {int(expected_len)} character word: ")
@@ -61,6 +60,7 @@ def main() -> None:
         print(f"You won in {turns}/6 turns!")
     else: 
         print("X/6 - Sorry, try again tomorrow!")
-    if __name__ =="__main__":
-        main() 
+    
 print(main())
+if __name__ == "__main__":
+    main() 
