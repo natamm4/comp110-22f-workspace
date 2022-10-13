@@ -1,0 +1,17 @@
+def zip(first: list[str], second: list[str]) -> dict[str, str]:
+    """Build a dictionary from two lists, where the first list is the key and the second is the value."""
+    assert len(first) == len(second)
+    # if len(first) != len(second):
+        # raise KeyError
+    result: dict[str, str] = {}
+    for i in range(0, len(first)):
+        result[first[i]] = second[i]
+    # i: int = 0
+    # while i < len(first):
+        # result[first[i]] = second[i]
+        # i += 1
+    return result
+
+first: list(str) = ["yas", "no", "okay"]
+second: list(str) = ["apple", "pear", "fruit"]
+zip(first, second)

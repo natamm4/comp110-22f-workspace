@@ -1,7 +1,6 @@
-"""EX03 - Structured Wordle"""
+"""EX03 - Structured Wordle."""
 
 __author__ = "730557757"
-
 
 
 def contains_char(multiple_char: str, single_char: str) -> bool:
@@ -38,11 +37,12 @@ def emojified(guess: str, secret: str) -> str:
 
 
 def input_guess(expected_len: int) -> str:
+    """Makes user reenter word if not the right amount of letters."""
     guess: str = input(f"Enter a {int(expected_len)} character word: ")
     while len(guess) != expected_len:
         guess = input(f"That wasn't {int(expected_len)} chars! Try again: ")
-    """Makes user reenter word if not the right amount of letters."""
     return guess
+
 
 def main() -> None:
     """The entrypoint of the program of main game loop."""
@@ -50,10 +50,10 @@ def main() -> None:
     guess: str = ""
     turns: int = 1
     win: bool = False
-    while (win is False) and (turns < 6):
+    while (win is False) and (turns <= 6):
         print(f"=== Turn {turns}/6 ===")
         guess = input_guess(len(secret))
-        emojified(guess, secret)
+        print(emojified(guess, secret)) 
         if guess == secret:
             win = True
         else:
@@ -63,6 +63,6 @@ def main() -> None:
     else: 
         print("X/6 - Sorry, try again tomorrow!")
     
-print(main())
+
 if __name__ == "__main__":
     main()
