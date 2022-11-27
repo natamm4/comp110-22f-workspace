@@ -39,4 +39,52 @@ def last(head: Optional[Node]) -> int:
     if head is None:
         raise ValueError("last cannot be called with None")
     else:
+        if head.next is None:
+            return head.data
+        else:
+            return last(head.next)
+
+
+def value_at(head: Optional[Node], index: int) -> int:
+    """Returns the data of the Node stored at the given index, or raises an IndexError if the index doesn't exist."""
+    if head is None:
+        raise IndexError("Index is out of bounds on the list.")
+    elif index == 0:
+        return head.data
+    else:
+        return value_at(head.next, index - 1)
+
+
+def max(head: Optional[Node]) -> int:
+    """Returns the max data value in the linked list, or raises a ValueError if the linked list is empty."""
+    if head is None:
+        raise ValueError("max cannot be called with None")
+    elif head.next is None:
+        return head.data
+    else:
+        current: int = head.data
+        m: int = max(head.next)
+        if m > current:
+            return m
+        else:
+            return current
+
+
+def linkify(items: list[int]) -> Optional[Node]:
+    """Returns a Linked List of Nodes with the same values in the same order as the input list."""
+    if items == []:
         return None
+    elif len(items) == 1:
+        return Node(items[0], None)
+    else:
+        return Node(items[0], linkify(items[1:]))
+
+
+def scale(head: Optional[Node], factor: int) -> Optional[Node]:
+    """Returns a new linked list of Nodes where each value in the original list is multiplied by the scaling factor."""
+    if head is None:
+        return None
+    elif head.next is None:
+        return Node(head.data * factor, None)
+    else:
+        return Node(head.data * factor, scale(head.next, factor))
