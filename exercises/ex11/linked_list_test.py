@@ -1,11 +1,7 @@
 """Tests for linked list utils."""
 
 import pytest
-from exercises.ex11.linked_list import Node, last
-from exercises.ex11.linked_list import Node, value_at
-from exercises.ex11.linked_list import Node, max
-from exercises.ex11.linked_list import Node, linkify
-from exercises.ex11.linked_list import Node, scale
+from exercises.ex11.linked_list import Node, last, value_at, max, linkify, scale
 
 __author__ = "730557757"
 
@@ -49,7 +45,8 @@ def test_max_reg() -> None:
 def test_linkify_empty() -> None:
     """Linkify should return a linked list of these nodes."""
     items = []
-    assert linkify(items) == None
+    assert linkify(items) is None
+
 
 def test_linkify_end() -> None:
     """Linkify should return a linked list of these nodes."""
@@ -60,7 +57,7 @@ def test_linkify_end() -> None:
 def test_scale_empty() -> None:
     """Scale should return None if head is None."""
     linked_list = None
-    assert scale(linked_list, 2) == None
+    assert scale(linked_list, 2) is None
 
 
 def test_scale_reg() -> None:
